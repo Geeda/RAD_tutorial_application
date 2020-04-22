@@ -28,6 +28,9 @@ test:
 6. hit `http://localhost:3000`
 7. `docker-compose down`
 
-`Heroku stuff`
-8. `pushing to heroku: git push heroku master`
-9. `site: https://boiling-wildwood-51457.herokuapp.com/`
+
+`Heroku`
+8. `git add -A`
+9. `git push`
+10. `git push heroku master`
+11. `site: https://sheltered-oasis-01857.herokuapp.com/`
