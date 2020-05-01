@@ -32,7 +32,8 @@ test:
 
 `Heroku`
 9. `git add -A`
-10. `git push`
-11. `git push heroku master`
-12. `heroku run rake db:migrate `
-13. `site: https://sheltered-oasis-01857.herokuapp.com/`
+10. `git commit -m "blah"`
+11. `git push`
+12. `git push heroku master`
+13. `heroku run rake db:migrate`
+14. `site: https://sheltered-oasis-01857.herokuapp.com/`
