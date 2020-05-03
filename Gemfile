@@ -7,6 +7,11 @@ ruby '2.5.7'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
 # Hashes passwords
 gem 'bcrypt',         '3.1.12'
+# Adds sample data to application
+gem 'faker',          '1.7.3'
+# pagination for a large user group
+gem 'will_paginate',  '3.1.7'
+gem 'bootstrap-will_paginate',  '1.0.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
