@@ -16,4 +16,9 @@ class StaticPagesController < ApplicationController
       puts user.email
     end
   end
+
+  def test
+    puts "hey"
+  end
+
 end
