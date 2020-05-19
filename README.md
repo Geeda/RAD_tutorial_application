@@ -29,11 +29,11 @@ test:
 7. hit `http://localhost:3000`
 8. `docker-compose down`
 
-
-`git + Heroku`
 9. `git add -A`
-10. `git commit -m "blah"`
+10. `git commit -m "message"`
 11. `git push`
 12. `git push heroku`
 13. `heroku run rake db:migrate`
-14. `site: https://sheltered-oasis-01857.herokuapp.com/`
+14. `heroku run rails db:seed`
+15. `heroku restart`
+15. `site: https://sheltered-oasis-01857.herokuapp.com/`
