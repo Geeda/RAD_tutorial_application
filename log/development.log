@@ -20058,3 +20058,427 @@ Completed 200 OK in 558ms (Views: 487.9ms | ActiveRecord: 21.0ms)
 
 
   [1m[36mUser Load (8.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = $1 LIMIT $2[0m  [["activated", true], ["LIMIT", 11]]
+  [1m[36mUser Load (11.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (6.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["email", "example@railstutorial.org"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (14.0ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "password_digest" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-05-21 04:03:13.653595"], ["password_digest", "$2a$10$8Wmqg.INxw39kxJd8scBpOJUNqIlcsURmLVTnyQq5a.vRfdLaUniW"], ["id", 1]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 172.26.0.1 at 2020-05-21 04:20:18 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (24.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bundle/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1212.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 2177ms (Views: 2138.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.26.0.1 at 2020-05-21 04:20:23 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (300.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 1340ms (Views: 1316.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 172.26.0.1 at 2020-05-21 04:20:26 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  Rendered users/_form.html.erb (41.9ms)
+  Rendered users/new.html.erb within layouts/application (78.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 722ms (Views: 607.0ms | ActiveRecord: 40.5ms)
+
+
+Started GET "/signup" for 172.26.0.1 at 2020-05-21 04:20:31 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.5ms)
+  Rendered users/_form.html.erb (23.7ms)
+  Rendered users/new.html.erb within layouts/application (45.7ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 592ms (Views: 542.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 172.26.0.1 at 2020-05-21 04:20:54 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9oRrF0zAvFR+JB7s730rkdyF9cq7y6okvzMyE1JdREekSt40XkBeNCTGL+q3Un1madm4Uo4JkrdNJWIMzwqAqw==", "user"=>{"name"=>"wodnfoqw", "email"=>"willguida88@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:19
+  [1m[36mUser Exists (11.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "willguida88@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  [1m[36mUser Create (12.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "wodnfoqw"], ["email", "willguida88@gmail.com"], ["created_at", "2020-05-21 04:20:55.120506"], ["updated_at", "2020-05-21 04:20:55.120506"], ["password_digest", "$2a$10$BxovkPGcZ7dMNgdhxTc3i.GtZtd2T8AwMKQiB8k2nExtyl6Zf3J12"], ["activation_digest", "$2a$10$HJyP1nVIvIToFaCEYZFfbu2ndUxFlC46ewbjq7pAeGj0ZiN7bVcV2"]]
+  ↳ app/controllers/users_controller.rb:19
+  [1m[35m (9.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:19
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (2.7ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.6ms)
+UserMailer#account_activation: processed outbound mail in 678.1ms
+Sent mail to willguida88@gmail.com (13.2ms)
+Date: Thu, 21 May 2020 04:20:56 +0000
+From: noreply@example.com
+To: willguida88@gmail.com
+Message-ID: <5ec601a82df67_12acaac0ced14376b@572d50682dd3.mail>
+Subject: Account acitvation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ec601a82ab64_12acaac0ced14375e9";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ec601a82ab64_12acaac0ced14375e9
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi wodnfoqw,
+
+Welcome to the Sample App! Click on the link below to activate your account:
+
+http://localhost:3000/account_activations/bSYyzKMFJ8_SJpM6h2KCPQ/edit?email=willguida88%40gmail.com
+
+----==_mimepart_5ec601a82ab64_12acaac0ced14375e9
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Sample App</h1>
+
+<p>Hi wodnfoqw, </p>
+
+    <p>
+    Welcome to the Sample App! Click on the link below to activate your account:
+    </p>
+
+    <a href="http://localhost:3000/account_activations/bSYyzKMFJ8_SJpM6h2KCPQ/edit?email=willguida88%40gmail.com">Activate</a>
+
+  </body>
+</html>
+
+----==_mimepart_5ec601a82ab64_12acaac0ced14375e9--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 1252ms (ActiveRecord: 75.3ms)
+
+
+Started GET "/" for 172.26.0.1 at 2020-05-21 04:20:56 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (34.8ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 645ms (Views: 596.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.26.0.1 at 2020-05-21 04:21:01 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (2.9ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 638ms (Views: 603.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 172.26.0.1 at 2020-05-21 04:21:06 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zfQErHsv/R+1bIYMKHAGopMKqYymuccET8w77inhGqkcDQK9RBckyXr/Ni0x7IKSlUWSumnCDAaVvIyqgslCCw==", "session"=>{"email"=>"example@railstutorial.org", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (14.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example@railstutorial.org"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:42
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:42
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 158ms (ActiveRecord: 18.1ms)
+
+
+Started GET "/users/1" for 172.26.0.1 at 2020-05-21 04:21:06 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (9.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:14
+  Rendered layouts/_header.html.erb (10.6ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 646ms (Views: 592.2ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/users" for 172.26.0.1 at 2020-05-21 04:21:08 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (11.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:14
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (19.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = $1[0m  [["activated", true]]
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = $1 LIMIT $2 OFFSET $3[0m  [["activated", true], ["LIMIT", 30], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:7
+  Rendered collection of users/_user.html.erb [30 times] (13.4ms)
+  Rendered users/index.html.erb within layouts/application (118.1ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 903ms (Views: 800.1ms | ActiveRecord: 37.0ms)
+
+
+Started GET "/users?page=4" for 172.26.0.1 at 2020-05-21 04:21:10 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"4"}
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:14
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (7.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = $1[0m  [["activated", true]]
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = $1 LIMIT $2 OFFSET $3[0m  [["activated", true], ["LIMIT", 30], ["OFFSET", 90]]
+  ↳ app/views/users/index.html.erb:7
+  Rendered collection of users/_user.html.erb [10 times] (6.6ms)
+  Rendered users/index.html.erb within layouts/application (115.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 803ms (Views: 736.2ms | ActiveRecord: 20.3ms)
+
+
+Started GET "/users?page=1" for 172.26.0.1 at 2020-05-21 04:21:17 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:14
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."activated" = $1[0m  [["activated", true]]
+  ↳ app/views/users/index.html.erb:4
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."activated" = $1 LIMIT $2 OFFSET $3[0m  [["activated", true], ["LIMIT", 30], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:7
+  Rendered collection of users/_user.html.erb [30 times] (8.4ms)
+  Rendered users/index.html.erb within layouts/application (65.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 777ms (Views: 721.6ms | ActiveRecord: 15.6ms)
+
+
+Started DELETE "/logout" for 172.26.0.1 at 2020-05-21 04:22:07 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Sw3fqTCHnEkrbLusOV8ZMunhZxUfBhuUSFmgGDJOIy8Zw2qKIgd+KXGOiqphcE/FXL0qjSrEIwe6T/AHrxnnww=="}
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:14
+Redirected to http://localhost:3000/
+Completed 302 Found in 14ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/" for 172.26.0.1 at 2020-05-21 04:22:07 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (55.9ms)
+  Rendered layouts/_shim.html.erb (0.8ms)
+  Rendered layouts/_header.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (2.3ms)
+Completed 200 OK in 937ms (Views: 905.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.26.0.1 at 2020-05-21 04:22:10 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 792ms (Views: 761.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 172.26.0.1 at 2020-05-21 04:22:18 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PPwrOX1YT44wsEOdVzTdz3F0dQEFFGfjSWT3JdZvYoPtBS0oQmCWWP8j87xOqFn/dztON8pvrOGTFEBhfUc6IQ==", "session"=>{"email"=>"willguida88@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "willguida88@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 877ms (Views: 719.7ms | ActiveRecord: 5.3ms)
+
+
+  [1m[36mUser Load (7.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (3.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 106]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/users/new" for 172.26.0.1 at 2020-05-21 04:23:22 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.9ms)
+  Rendered users/_form.html.erb (41.2ms)
+  Rendered users/new.html.erb within layouts/application (83.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 1027ms (Views: 980.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 172.26.0.1 at 2020-05-21 04:23:38 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LSaz/vLFP0btSxgPFhpIFpkFA1XNOyipgFmjqDCVa5wVazDqfn6NPEjqB9w37Ep3+h0wWY3fWmfF4XFQYAE/Jw==", "user"=>{"name"=>"qwerty", "email"=>"willguida88@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:19
+  [1m[36mUser Exists (4.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "willguida88@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "qwerty"], ["email", "willguida88@gmail.com"], ["created_at", "2020-05-21 04:23:38.973707"], ["updated_at", "2020-05-21 04:23:38.973707"], ["password_digest", "$2a$10$hM4zmZAod7Swyx32e9GsFetXJWorG7wSJew2LsSmhhoOsvkeLGL1C"], ["activation_digest", "$2a$10$TgU/7pCaPq.hmXLhyPkCz.Cxv/ABZPJ1Y33mCedHm3PIgshHF5yhW"]]
+  ↳ app/controllers/users_controller.rb:19
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:19
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (3.5ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (3.3ms)
+UserMailer#account_activation: processed outbound mail in 285.5ms
+Sent mail to willguida88@gmail.com (9.3ms)
+Date: Thu, 21 May 2020 04:23:39 +0000
+From: noreply@example.com
+To: willguida88@gmail.com
+Message-ID: <5ec6024b59b0a_12acaac0ced1437889@572d50682dd3.mail>
+Subject: Account acitvation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ec6024b576b7_12acaac0ced1437787";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ec6024b576b7_12acaac0ced1437787
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi qwerty,
+
+Welcome to the Sample App! Click on the link below to activate your account:
+
+http://localhost:3000/account_activations/uAqlAzxugIwu6_G7SFTt6Q/edit?email=willguida88%40gmail.com
+
+----==_mimepart_5ec6024b576b7_12acaac0ced1437787
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Sample App</h1>
+
+<p>Hi qwerty, </p>
+
+    <p>
+    Welcome to the Sample App! Click on the link below to activate your account:
+    </p>
+
+    <a href="http://localhost:3000/account_activations/uAqlAzxugIwu6_G7SFTt6Q/edit?email=willguida88%40gmail.com">Activate</a>
+
+  </body>
+</html>
+
+----==_mimepart_5ec6024b576b7_12acaac0ced1437787--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 524ms (ActiveRecord: 8.8ms)
+
+
+Started GET "/" for 172.26.0.1 at 2020-05-21 04:23:39 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (41.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 573ms (Views: 553.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 172.26.0.1 at 2020-05-21 04:23:43 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_shim.html.erb (0.9ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 596ms (Views: 556.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 172.26.0.1 at 2020-05-21 04:23:49 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"37AWP7b5FIrzowAwd1vo6FZSsFlWYZP/CJt0n4UpHqAOSRAuicHNXDwwsBFux2zYUB2Lb5kaWP3S68PbLgFGAg==", "session"=>{"email"=>"willguida88@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (8.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "willguida88@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6
+Redirected to http://localhost:3000/
+Completed 302 Found in 95ms (ActiveRecord: 8.5ms)
+
+
+Started GET "/" for 172.26.0.1 at 2020-05-21 04:23:49 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (53.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 591ms (Views: 560.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (13.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 107]]
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
