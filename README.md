@@ -33,7 +33,9 @@ test:
 10. `git commit -m "message"`
 11. `git push`
 12. `git push heroku`
-13. `heroku run rake db:migrate`
-14. `heroku run rails db:seed`
-15. `heroku restart`
-15. `site: https://sheltered-oasis-01857.herokuapp.com/`
+13. `heroku restart`
+14. `heroku pg:reset DATABASE`
+15. `heroku run rake db:migrate`
+16. `heroku run rails db:seed`
+
+17. `site: https://sheltered-oasis-01857.herokuapp.com/`
