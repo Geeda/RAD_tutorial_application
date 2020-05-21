@@ -38,4 +38,4 @@ test:
 15. `heroku run rake db:migrate`
 16. `heroku run rails db:seed`
 
-17. `site: https://vast-meadow-91148.herokuapp.com/`
+17. `site: https://safe-river-64751.herokuapp.com/`
